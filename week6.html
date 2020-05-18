@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163185198-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163185198-1');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>User Science Journal</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css " rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link
+    href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">JMWill</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Blog
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a class="dropdown-item" href="post1.html">week 1</a>
+              <a class="dropdown-item" href="week2.html">week 2</a>
+              <a class="dropdown-item " href="week3.html">week 3</a>
+              <a class="dropdown-item" href="week4.html">week 4</a>
+              <a class="dropdown-item" href="week5.html">week 5</a>
+              <a class="dropdown-item active" href="week6.html">week 6</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/brainstorming.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Analysis of User Science Journal</h1>
+            <h2 class="subheading">Making Accessibility Improvements to my User Science Journal
+            </h2>
+            <span class="meta">Posted by
+              <a href="#">JMWill</a>
+              on May 16, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Week 6</li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <H2 class="section-heading">Introduction</h2>
+          <p>This week we will be performing an analysis of this blog for use of accessibility principles in its design.
+            Like last week, we'll use WAVE.webaim's accessibility analysis tool as well as Google's Lighthouse Audit
+            tool. This post will summarize findings and the recommended fixed. Generally speaking, the baseline
+            accessibilty score is relatively strong with a few changes that are needed. The most prominent issues are
+            summarized below
+
+
+            <H2 class="section-heading">Assessment</h2>
+            <br>
+            <h3>Issue 1: Contrast Errors</h3>
+            <p>All pages on this blog have color contrast issues making some text difficult to read for the visually
+              impaired. Contrast guidelines dictate that the contrast between text and its background must be
+              sufficiently distinctive from each other. The guidelines specify a ratio of "4.5 to 1" for small text
+              (below 18px) and "3 to 1" for large text. The actual math and meaning behind these numerical ratios, I
+              cannot say. After attempting to research the underlying formula I was not able to obtain a sufficient
+              explanation to repeat here.
+
+              Contrast Errors were identified in several places on this blog, mainly the white text in the header and
+              the light grey text used on the home page "posted by" and "date" texts in each post preview (pictures
+              below).
+              <img class="img-fluid" style="padding-bottom: 10px;" src="img/week6/headercontrast.JPG"
+                alt="screenshot of header elements without sufficient contrast">
+              <img class="img-fluid" src="img/week6/contrast2.JPG"
+                alt="screenshot of post preview text without sufficient contrast">
+            </p>
+            <p>The fix to these issues is to add black shading behind the text that is currently white to create
+              contrast, as seen below. For the "post preview" text, we will modify to a darker shade of grey (#373D3F)
+              that creates adequate contrast. The CSS fixes for background shading for header elements shown below</p>
+
+            <img class="img-fluid" style="padding-bottom: 10px;" src="img/week6/postpreviewcss.JPG"
+              alt="screenshot of css snippet adding contrast to post preview text">
+            <br>
+            <img class="img-fluid" src="img/week6/navcss.JPG"
+              alt="screenshot of css snippet adding contrast to  header elements">
+            <p>The results of these changes can be seen in the current version of this page</p>
+
+
+            <h3>Issue 2: Link Text</h3>
+            <p>There are instances of link text not being sufficiently explanative, such as in week 5's post where an
+              external link is accessed by clicking text that reads "here". A screen reader will read this as "link to
+              here" providing no information as a standalone link, an individual would have to read the preceeding
+              sentence to understand the link's purpose. Additionally, there are multiple instances of dead links (a
+              href tags that lead to the top of the page, or to index.html despite being on index.html).
+            </p>
+            <p>The fix to these issues is to add sufficient link text to legitimate links leading to relevent pages
+              (image of revised text below), and to
+              delete links that go nowhere</p>
+            <img class="img-fluid" style="border-style: solid;" src="img/week6/linktextweek5fix.JPG"
+              alt="screenshot of css snippet adding contrast to  header elements">
+
+            <h3 style="padding-top: 15px;">Issue 3: Repeatitive alt-text</h3>
+            <p>There are several instances of alt-text descriptions being repeated on the same page, despite the images
+              being different. This is because the dev (whoever that is) copied the img-src tag from elsewhere
+              on the page and didnt bother to change the text. Not only do these text descriptions fail to proprety
+              describe the images, but they also create confusion for the user who is left to believe that the same
+              image is repeated multiple times</p>
+            <P>The fix for this is to modify the alt-text to be accurate descriptions of the image. Alt text was fixed
+              on week 2, week 3, and week 5's posts</P>
+
+            <H2 class="section-heading">Summary</h2>
+            <p>While generally accessible to begin with, some oversights were made in previous posts. We fixed alt-text,
+              removed dead links, styled link text in a way that is useful to screen readers and added contrast to areas
+              without sufficient contrast. </p>
+
+
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>

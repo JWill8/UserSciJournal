@@ -136,6 +136,7 @@ img::-moz-selection {
   }
 }
 
+
 @media only screen and (min-width: 992px) {
   #mainNav {
     -webkit-transition: background-color 0.2s;
