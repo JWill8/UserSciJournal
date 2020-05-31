@@ -14,7 +14,6 @@
     gtag('config', 'UA-163185198-1');
   </script>
 
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -62,7 +61,9 @@
               <a class="dropdown-item " href="week3.html">week 3</a>
               <a class="dropdown-item" href="week4.html">week 4</a>
               <a class="dropdown-item" href="week5.html">week 5</a>
-              <a class="dropdown-item active" href="week6.html">week 6</a>
+              <a class="dropdown-item" href="week6.html">week 6</a>
+              <a class="dropdown-item" href="week7.html">week 7</a>
+              <a class="dropdown-item active" href="week7.html">week 8</a>
             </div>
           </li>
           <li class="nav-item">
@@ -81,12 +82,12 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Analysis of User Science Journal</h1>
-            <h2 class="subheading">Making Accessibility Improvements to my User Science Journal
+            <h1>Google Analytics - User Sci Journal</h1>
+            <h2 class="subheading">First Look at Google Analytics
             </h2>
             <span class="meta">Posted by
               <a href="#">JMWill</a>
-              on May 16, 2020</span>
+              on May 31, 2020</span>
           </div>
         </div>
       </div>
@@ -96,7 +97,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Week 6</li>
+        <li class="breadcrumb-item active" aria-current="page">Week 8</li>
       </ol>
     </nav>
   </div>
@@ -107,76 +108,47 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <H2 class="section-heading">Introduction</h2>
-          <p>This week we will be performing an analysis of this blog for use of accessibility principles in its design.
-            Like last week, we'll use WAVE.webaim's accessibility analysis tool as well as Google's Lighthouse Audit
-            tool. This post will summarize findings and the recommended fixed. Generally speaking, the baseline
-            accessibilty score is relatively strong with a few changes that are needed. The most prominent issues are
-            summarized below
+          <p>This week we examine Goals tracking functionality within Google Analytics. Once google analytics is set up
+            on your page, google lets you set goals for user interaction with your site. Examples of goals could be
+            users being directed to a certain page, spending a certain amount of time on a certain page or played
+            embedded media content. </p>
+
+          <h2 class="section-heading">Goals and Funnels</h2>
+          <h3>Goal</h3>
+          <p>For this blog, I am creating a destination goal. A destination goal is met when a user is directed to a
+            certain destination on your website. The destination I am tracking is whether users click a button to take
+            them to a second page which shows accessible color combinations. In week 6, we made accessibility
+            improvements to our Blogs with one of the improvements being fixing contrast errors between text and their
+            backgrounds. I have since gone back and edited week 6's article to include a link to a page that shows other
+            acceptible font colors for white backgrounds. The user is directed to this page with a large orange button.
+          </p>
+          <h3>Funnel</h3>
+          In addition to setting up goal tracking, I created a funnel to visualize user's path from the week 6 article
+          to the color scheme page.
+
+          <h2 class="section-heading">Setting up a goals and funnels in Google Analytics</h2>
+          <h3>Goals</h3>
+          <p>The process for setting up a goal in google analytics is relatively user friendly. From the Admin Menu,
+            select goals, then "create new goal". This will bring you to a goal configuration menu. From here, follow
+            Google's instructions on how to create a new goal. Note: your goal may require you to create an "event"
+            first. The goal I created here will not require this. </p>
+          <h3>Funnels</h3>
+          <p>To create a funnel visualization, from the goal details page, select "yes" on the slider button under
+            funnel. From there, Google will ask you to identify each step in the user path that you'd like ot measure.
+            In this case, there is only one step prior to the destination. So in my case, the funnel is /week6.html and
+            the destination is /colors.html. </p>
+
+          <img class="img-fluid" style="border-style: solid;" src="img/goal.jpg"
+            alt="screenshot of google analytics goals menu">
+          <p> </p>
+          <img class="img-fluid" style="border-style: solid;padding-top:20px;" src="img/funnel.JPG"
+            alt="screenshot of google analytics goals menu">
 
 
-            <H2 class="section-heading">Assessment</h2>
-            <br>
-            <h3>Issue 1: Contrast Errors</h3>
-            <p>All pages on this blog have color contrast issues making some text difficult to read for the visually
-              impaired. Contrast guidelines dictate that the contrast between text and its background must be
-              sufficiently distinctive from each other. The guidelines specify a ratio of "4.5 to 1" for small text
-              (below 18px) and "3 to 1" for large text. The actual math and meaning behind these numerical ratios, I
-              cannot say. After attempting to research the underlying formula I was not able to obtain a sufficient
-              explanation to repeat here.
+          <h2 class="section-heading">Summary</h2>
+          <p>With these tools in place, we'll be able to measure goals (converstions) and visualize the path users
+            took to get to the destination, including % of users who dropped before arriving at the goal. </p>
 
-              Contrast Errors were identified in several places on this blog, mainly the white text in the header and
-              the light grey text used on the home page "posted by" and "date" texts in each post preview (pictures
-              below).
-              <img class="img-fluid" style="padding-bottom: 10px;" src="img/week6/headercontrast.JPG"
-                alt="screenshot of header elements without sufficient contrast">
-              <img class="img-fluid" src="img/week6/contrast2.JPG"
-                alt="screenshot of post preview text without sufficient contrast">
-            </p>
-            <p>The fix to these issues is to add black shading behind the text that is currently white to create
-              contrast, as seen below. For the "post preview" text, we will modify to a darker shade of grey (#373D3F)
-              that creates adequate contrast. The CSS fixes for background shading for header elements shown below</p>
-
-            <img class="img-fluid" style="padding-bottom: 10px;" src="img/week6/postpreviewcss.JPG"
-              alt="screenshot of css snippet adding contrast to post preview text">
-            <br>
-            <img class="img-fluid" src="img/week6/navcss.JPG"
-              alt="screenshot of css snippet adding contrast to  header elements">
-            <p>The results of these changes can be seen in the current version of this page</p>
-
-            <h4 style="color:blue">If you are a web designer and need a reference for accessible color schemes, click
-              below</h4>
-
-            <!---Button to Color Combo Site Here-->
-            <div style="padding-top:25px;padding-bottom:25px;">
-              <a class="btn btn-primary" href="colors.html" target="blank">More Accessible Color Combos</a>
-            </div>
-
-            <h3 style="padding-top:40px;">Issue 2: Link Text</h3>
-            <p>There are instances of link text not being sufficiently explanative, such as in week 5's post where an
-              external link is accessed by clicking text that reads "here". A screen reader will read this as "link to
-              here" providing no information as a standalone link, an individual would have to read the preceeding
-              sentence to understand the link's purpose. Additionally, there are multiple instances of dead links (a
-              href tags that lead to the top of the page, or to index.html despite being on index.html).
-            </p>
-            <p>The fix to these issues is to add sufficient link text to legitimate links leading to relevent pages
-              (image of revised text below), and to
-              delete links that go nowhere</p>
-            <img class="img-fluid" style="border-style: solid;" src="img/week6/linktextweek5fix.JPG"
-              alt="screenshot of css snippet adding contrast to  header elements">
-
-            <h3 style="padding-top: 15px;">Issue 3: Repeatitive alt-text</h3>
-            <p>There are several instances of alt-text descriptions being repeated on the same page, despite the images
-              being different. This is because the dev (whoever that is) copied the img-src tag from elsewhere
-              on the page and didnt bother to change the text. Not only do these text descriptions fail to proprety
-              describe the images, but they also create confusion for the user who is left to believe that the same
-              image is repeated multiple times</p>
-            <P>The fix for this is to modify the alt-text to be accurate descriptions of the image. Alt text was fixed
-              on week 2, week 3, and week 5's posts</P>
-
-            <H2 class="section-heading">Summary</h2>
-            <p>While generally accessible to begin with, some oversights were made in previous posts. We fixed alt-text,
-              removed dead links, styled link text in a way that is useful to screen readers and added contrast to areas
-              without sufficient contrast. </p>
 
 
   </article>

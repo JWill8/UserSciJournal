@@ -413,8 +413,9 @@ footer .copyright {
 }
 
 .btn-primary {
-    background-color: #0085a1;
-    border-color: #0085a1
+    background-color: coral;
+    border-color: black;
+    border-width: 3px;
 }
 
 .btn-primary:active,
