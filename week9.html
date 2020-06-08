@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163185198-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163185198-1');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>User Science Journal</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css " rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link
+    href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">JMWill</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Blog
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a class="dropdown-item" href="post1.html">week 1</a>
+              <a class="dropdown-item" href="week2.html">week 2</a>
+              <a class="dropdown-item " href="week3.html">week 3</a>
+              <a class="dropdown-item" href="week4.html">week 4</a>
+              <a class="dropdown-item" href="week5.html">week 5</a>
+              <a class="dropdown-item" href="week6.html">week 6</a>
+              <a class="dropdown-item" href="week7.html">week 7</a>
+              <a class="dropdown-item" href="week8.html">week 8</a>
+              <a class="dropdown-item active" href="week9.html">week 9</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/brainstorming.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Google Analytics - User Sci Journal</h1>
+            <h2 class="subheading">First Look at Google Analytics
+            </h2>
+            <span class="meta">Posted by
+              <a href="#">JMWill</a>
+              on May 31, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Week 9</li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <H2 class="section-heading">Introduction</h2>
+          <p>This week we set up an experiment to determine if design improvements to a certain starting page, in this
+            case the week 6 article about accessibility, will drive traffic to a secondary page which is a library of
+            accessible color options. Using last week's data as well as some informal user testing, we implemented
+            design changes and created a redirect experiment with Google Optimize. After a week of traffic, we will
+            determine if the design changes had any effect compared to baseline.</p>
+
+          <h2>Overview of Design</h2>
+          <p>As can be viewed on this blog by navigated to week 6's article, the baseline week 6 article includes a
+            large orange button directing users to a page which shows text and background color combinations which
+            comply with accessibility guidelines. The goal is for users to click this button and view this content. Last
+            week, no user clicked this button. I believe this is for several reasons:</p>
+          <ul>
+            <li>The button is presented as "optional" content</li>
+            <li>The content is not interesting to someone not involved in web development</li>
+          </ul>
+          <p>I believe the design allows users to see that the button is there, but they are simply not interested. The
+            design
+            changes implemented in the alternate page attempt to remedy this.</p>
+          <h4>Summary of Changes</h4>
+          <p>The design changes attempt to make a page which displays color combinations interesting to the user. I
+            attempted to this by re-writing some article content to introduce contrast errors, describe what they are,
+            and then direct users to a page to see examples of contrast errors. The baseline page simply says "click
+            here to see accessible color combinations". The new page will say "see examples of what we're talking
+            about". I beelive this revised phrasing, and placing the link in the first paragraph of the article will
+            create a
+            more compelling and useful link for the user since the page is presented as sometihng to aid in the
+            understanding of the article's content rather than optional side content.</p>
+          <h2>Creating a Google Optimize Experiment</h2>
+          <p>To test these changes side by side, we've created an experience test with Google Optimize. The test we've
+            created will direct users to either the existing week 6 article, or the new design for the week 6 article.
+            This will allow us to compare data side by side for the two web page designs over the experiment period,
+            with each page recieving an equal number of page views.</p>
+          <p>Since we already have google analytics script inserted into every page on this blog, the process for adding
+            Google
+            Optimize is fairly straight forward. Google Optimize asks that we add additoinal script to the sites we are
+            experimenting, and link the test sites to a our Google Anaytics property. This creates a linkage between the
+            experiment, and the goal set up in Google Analytics which is clicking the link to the colors page.</p>
+          <p>Setting up the experiment in Optimize is also relatively easy. We supply Google with the URL's of the
+            baseline page and the new page we are testing, and Optimize takes care of the rest.</p>
+          <h2>Summary</h2>
+          <p>We are testing an alternative web page design for week 6's article attempting to drive traffic. We've taken
+            the input from self examanination and informal user testing to create an alternative to design. Google
+            Optimize will help us test this new design by presenting it to users who navigate to week 6's article. We
+            have the test infrastructure and web design in place, now we await traffic to determine which site performs better (if any). </p>
+
+
+
+
+
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
